@@ -1,0 +1,98 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"> <!-- Add your custom CSS file -->
+    <style>
+        /* Add any additional custom styles here */
+        .login-card {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center; /* Align title and logo horizontally */
+            justify-content: center;
+        }
+        .logo {
+            width: 50px; /* Adjust size as needed */
+            margin-right: 10px; /* Add space between logo and text */
+        }
+        .my-form .form-group {
+            margin-bottom: 20px;
+        }
+        .my-form label {
+            font-weight: bold;
+        }
+        .my-form input[type="text"],
+        .my-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">
+                            <img src="{% static 'images/default.png' %}" alt="MarketHub Logo" class="logo">
+                            Welcome to MarketHub
+                        </h3> 
+                        <form method="post" class="my-form">
+                            {% csrf_token %}
+                            {% if error_message %}
+                                <p class="error">{{ error_message }}</p>
+                            {% endif %}
+                            <div class="form-group">
+                                <label for="username">Username:</label>
+                                <input type="text" id="username" name="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block login-button">Login</button>
+                        </form>
+                        <p class="text-center">Don't have an account? <a href="{% url 'register' %}">Sign up here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

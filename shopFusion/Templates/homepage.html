@@ -1,0 +1,282 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketHub</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/79a1a846e3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="{% static 'images/default.png' %}" alt="Your Brand Logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#products">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto"> <!-- Move the login and register links to the right -->
+      <!-- Register Link -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+      <!-- Login Link -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  
+  <!-- Hero Section with Carousel and Jumbotron -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Carousel -->
+      <div class="col-lg-8">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/caro1.jpg' %}" class="d-block w-100" alt="First Slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Shop Smarter, Live Better</h5>
+                <p>Convenience, deals, and unbeatable prices.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{%static 'images/caro2.jpg' %}" class="d-block w-100" alt="Second Slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Transform Your Home</h5>
+                <p>Elegant decor and functional essentials</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/image3.jpg' %}" class="d-block w-100" alt="Third Slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Gifts That Delight</h5>
+                <p>Perfect gifts for every occasion.</p>
+              </div>
+            </div>
+            <!-- Add more carousel items as needed -->
+          </div>
+        </div>
+      </div>
+      <!-- Jumbotron -->
+      <div class="col-lg-4">
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome to MarketHub</h1>
+          <p class="lead">Your all in one stop store shop!!.</p>
+          <a class="btn btn-primary btn-lg" href="#products">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Featured Products Section -->
+<section id="products" class="section featured-products">
+  <div class="container">
+    <h2>Featured Products</h2>
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/smart.jpg' %}" class="card-img-top img-fluid" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title">TechTime Smartwatch</h5>
+            <p class="card-text">Stay connected and track your fitness with this sleek smartwatch.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/suit.jpg' %}" class="card-img-top img-fluid" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title">Executive Power Suit</h5>
+            <p class="card-text">Command attention and exude confidence in this tailored masterpiece.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/Tv.jpg' %}" class="card-img-top img-fluid" alt="Product 3">
+          <div class="card-body">
+            <h5 class="card-title">VisionX 4K Smart TV</h5>
+            <p class="card-text">Immerse yourself in stunning visuals and endless entertainment.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/mac.jpg' %}" class="card-img-top img-fluid" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title">SwiftTech Ultrabook</h5>
+            <p class="card-text">Power through tasks and unleash creativity with this lightweight powerhouse.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+      <!--product 5 -->
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/phone.jpg' %}" class="card-img-top img-fluid" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title">iSleek iPhone</h5>
+            <p class="card-text">Experience the pinnacle of innovation and style with the latest iPhone.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="{% static 'images/soccer.jpg' %}" class="card-img-top img-fluid" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title">StrikePro Soccer Ball</h5>
+            <p class="card-text">Dominate the field with precision and control using this professional-grade soccer ball.</p>
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 about-hero-image">
+        <img src="{% static 'images/cover.png' %}" alt="About Us Hero Image" class="img-fluid">
+      </div>
+      <div class="col-md-6 about-hero-content">
+        <h2>About MarketHub</h2>
+        <p>Innovation meets convenience at MarketHub. We're passionate about providing exceptional service and the latest products, all at your fingertips.</p>
+      </div>
+    </div>
+
+    <div class="team-introduction">
+      <h3 class="text-center">Meet the Team</h3>
+      <p>Our team is the heart of MarketHub. Led by visionary founders, each member brings unique expertise and passion to the table.</p>
+      <div class="row team-members">
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="{% static 'images/ceo2.jpg' %}" alt="Team Member 1 Photo" class="rounded-circle img-fluid">
+            <h4>John Smith</h4>
+            <p>CEO & Founder</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="{% static 'images/ceo3.jpg' %}" alt="Team Member 2 Photo" class="rounded-circle img-fluid">
+            <h4>Jane Doe</h4>
+            <p>Head of Product</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-member">
+            <img src="{% static 'images/ce01.jpg' %}" alt="Team Member 3 Photo" class="rounded-circle img-fluid">
+            <h4>Michael Johnson</h4>
+            <p>Head of Marketing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="call-to-action">
+      <h3>Join the MarketHub Community</h3>
+      <p>Explore our curated collections, discover exclusive offers, and stay updated with the latest trends. Let's redefine online shopping together!</p>
+      <a href="#" class="btn btn-primary">Explore Products</a>
+      <a href="#" class="btn btn-light">Subscribe</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Contact Us Section -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Contact Us</h2>
+        <p>Have a question or feedback? Feel free to reach out to us!</p>
+        <form id="contact-form" action="#" method="post" class="contact-form">
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+      <div class="col-md-6 contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> info@markethub.com</p>
+        <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+        <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="text-center py-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Logo Column -->
+      <div class="col-md-6 mb-3 mb-md-0">
+        <img src="{% static 'images/default.png' %}" alt="Your E-commerce Store Logo" class="img-fluid" style="max-width: 100px;">
+      </div>
+      <!-- Copyright Column -->
+      <div class="col-md-6">
+        <p class="mb-0">&copy; Copyright 2024 MarketHub</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- Bootstrap and JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - Product Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        .product-details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .product-image {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .product-info {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">{{ product.name }}</h1>
+        <div class="product-details">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+            <div class="product-info">
+                <p><strong>Description:</strong> {{ product.description }}</p>
+                <p><strong>Price:</strong> ${{ product.price }}</p>
+                <p><strong>Stock:</strong> {{ product.stock }}</p>
+                <p><strong>Category:</strong> {{ product.category.name }}</p>
+                {% if product.subcategory %}
+                    <p><strong>Subcategory:</strong> {{ product.subcategory.name }}</p>
+                {% endif %}
+                <!-- Add more details as needed -->
+            </div>
+            <a href="{% url 'product_list_by_category' product.category.id %}" class="btn btn-secondary btn-back">Back to Products</a>
+        </div>
+    </div>
+</body>
+</html>

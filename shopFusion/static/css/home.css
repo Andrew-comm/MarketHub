@@ -1,0 +1,234 @@
+/* Custom CSS for styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa; /* Light gray background */
+    }
+   /* Navbar styling */
+  .navbar {
+    background-color: #fff; /* White background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Specify desired font */
+  }
+
+  .navbar-brand img {
+    width: 50px;
+    height: auto;
+  }
+
+  .navbar-nav {
+    margin-right: auto; /* Push the navbar items to the right */
+  }
+
+  .navbar-nav .nav-link {
+    color: #333; /* Dark gray text color */
+    margin-left: 20px; /* Space between navbar items */
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    text-transform: uppercase; /* Convert text to uppercase */
+    transition: color 0.3s ease; /* Add transition effect for color change */
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #007bff; /* Blue color on hover */
+  }
+    /* Jumbotron styling */
+    .jumbotron {
+      margin-top: 15px;
+      background-color: #fff; /* White background */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+    
+    .jumbotron h1 {
+      color: #007bff; /* Blue heading color */
+    }
+    
+    .jumbotron p {
+      color: #555; /* Dark gray text color */
+    }
+    
+    .jumbotron .btn-primary {
+      background-color: #007bff; /* Blue button background color */
+      border-color: #007bff; /* Blue button border color */
+    }
+    
+    .jumbotron .btn-primary:hover {
+      background-color: #0056b3; /* Darker blue color on hover */
+      border-color: #0056b3; /* Darker blue border color on hover */
+    }
+    
+    /* Carousel image height */
+    .carousel-item img {
+      margin-top: 15px;
+      height: 400px; /* Adjust the height as needed */
+      object-fit: cover; /* Ensure the image covers the entire carousel item */
+    }
+
+
+    .card {
+        border: 1px solid #dee2e6; /* Border color */
+        border-radius: 10px; /* Rounded corners */
+      }
+      
+      /* Card title styling */
+      .card-title {
+        font-size: 1.25rem; /* Larger font size */
+        color: #333; /* Dark text color */
+      }
+      
+      /* Card text styling */
+      .card-text {
+        color: #666; /* Gray text color */
+      }
+      
+      /* Button styling */
+      .btn-primary {
+        background-color: #007bff; /* Blue background color */
+        border-color: #007bff; /* Blue border color */
+      }
+      
+      .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue background color on hover */
+      }
+      
+      .btn-primary:focus, .btn-primary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+      }
+
+      h2 {
+        font-size: 2rem; /* Larger font size */
+        color: #333; /* Dark text color */
+        text-align: center; /* Center-align the heading */
+        margin-bottom: 30px; /* Add some bottom margin for spacing */
+      }
+
+
+
+   /* About Us Section styling */
+#about {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Adjust as needed */
+}
+
+.about-hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-introduction,
+.call-to-action {
+    margin-top: 50px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 140px; /* Adjust size as needed */
+    height: 140px; /* Adjust size as needed */
+  
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    margin-bottom: 15px;
+}
+
+.call-to-action {
+    text-align: center;
+}
+
+.call-to-action .btn {
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/* Contact Us Section styling */
+#contact {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Adjust as needed */
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  #contact p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form .form-control {
+    border-radius: 5px;
+  }
+  
+  .contact-form textarea.form-control {
+    resize: none;
+  }
+  
+  .contact-form button[type="submit"] {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-link {
+    font-size: 1.2rem; /* Adjust font size as needed */
+    color: #333;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 20px; /* Increase or decrease spacing between links */
+  }
+  
+  .social-link:hover {
+    color: #007bff;
+  }
+  
+  .social-link i {
+    margin-right: 5px; /* Adjust icon spacing */
+  }

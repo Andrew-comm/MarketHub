@@ -1,0 +1,52 @@
+
+.navbar-brand img {
+    max-height: 50px; /* Adjust height as needed */
+    margin-right: 10px; /* Optional: Adjust spacing between logo and brand name */
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.product-name {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.product-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.product-stock {
+    color: #6c757d;
+    margin-top: 10px;
+}
+.quantity-input {
+    width: 60px;
+    text-align: center;
+}
+.subtotal {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.show-more-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}

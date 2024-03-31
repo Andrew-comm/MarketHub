@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!-- Logo and Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'images/default.png' %}" alt="Logo"> <!-- Adjust path to your logo image -->
+                MarketHub
+            </a>
+            <!-- Navbar Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mt-5 mb-4">MarketHub Generall Collections</h1>
+        {% for category_product in category_products %}
+            <h2>{{ category_product.category.name }}</h2>
+            <div class="row product-container">
+                {% for product in category_product.products %}
+                    <div class="col-md-6">
+                        <div class="product-card">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                            <h3 class="product-name">{{ product.name }}</h3>                    
+                            <p class="product-price">Price: ${{ product.price }}</p>
+                            <p class="product-stock">Stock: {{ product.stock }}</p>
+                            <!-- Quantity input field -->
+                            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                                {% csrf_token %}
+                                <input type="number" class="quantity-input" name="quantity" value="{{ product.cart_quantity }}" min="1" data-product-id="{{ product.id }}">
+                                <!-- Subtotal display -->
+                                <!-- Add to cart button -->
+                                <button type="submit" class="btn btn-primary mt-2">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'product_list_by_category' category_product.category.id %}" class="show-more-link">Show More</a>
+        {% endfor %}
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Update subtotal when quantity changes
+            $('.quantity-input').change(function() {
+                var productId = $(this).data('product-id');
+                var quantity = $(this).val();
+                var productPrice = parseFloat($(this).closest('.product-card').find('.product-price').text().replace('$', ''));
+                var subtotal = quantity * productPrice;
+                $(this).closest('.product-card').find('.subtotal-value').text(subtotal.toFixed(2));
+            });
+        });
+    </script>
+</body>
+</html>
