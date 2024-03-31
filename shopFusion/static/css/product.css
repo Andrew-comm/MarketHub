@@ -1,4 +1,4 @@
-
+/* Custom Styles */
 .navbar-brand img {
     max-height: 50px; /* Adjust height as needed */
     margin-right: 10px; /* Optional: Adjust spacing between logo and brand name */
@@ -7,9 +7,10 @@
 .product-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center align products */
     margin-top: 20px;
 }
+
 .product-card {
     border: 1px solid #dee2e6;
     border-radius: 5px;
@@ -17,36 +18,71 @@
     margin: 10px;
     width: 300px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align content */
 }
+
 .product-image {
     width: 100%;
     height: auto;
     border-radius: 5px;
 }
+
 .product-name {
     font-size: 1.2rem;
     margin-top: 10px;
 }
+
 .product-price {
     font-weight: bold;
     margin-top: 10px;
 }
+
 .product-stock {
     color: #6c757d;
     margin-top: 10px;
 }
+
 .quantity-input {
     width: 60px;
     text-align: center;
 }
-.subtotal {
-    font-weight: bold;
-    margin-top: 10px;
-}
+
 .show-more-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
+    display: inline-block;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 5px; /* Rounded corners */
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.show-more-link:hover {
+    background-color: #101111; /* Darker color on hover */
+}
+
+/* Enhanced Styling for Headings and Category Sections */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Dark text color */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color */
+    text-transform: uppercase; /* Uppercase letters */
+    text-align: center;
+}
+
+.category-section {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }

@@ -1,0 +1,52 @@
+.login-card {
+    margin-top: 50px;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-body {
+    padding: 30px;
+}
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Align title and logo horizontally */
+    justify-content: center;
+}
+.logo {
+    width: 50px; /* Adjust size as needed */
+    margin-right: 10px; /* Add space between logo and text */
+}
+.my-form .form-group {
+    margin-bottom: 20px;
+}
+.my-form label {
+    font-weight: bold;
+}
+.my-form input[type="text"],
+.my-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.login-button:hover {
+    background-color: #0056b3;
+}
+.text-center {
+    text-align: center;
+}

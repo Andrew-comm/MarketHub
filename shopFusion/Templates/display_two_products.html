@@ -9,52 +9,139 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        
-        
+        /* Custom Styles */
+        .navbar-brand img {
+            max-height: 50px; /* Adjust height as needed */
+            margin-right: 10px; /* Optional: Adjust spacing between logo and brand name */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center align products */
+            margin-top: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align content */
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .product-price {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .product-stock {
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .show-more-link {
+            display: inline-block;
+            background-color: #007bff; /* Button color */
+            color: #fff; /* Text color */
+            padding: 10px 20px; /* Adjust padding */
+            border-radius: 5px; /* Rounded corners */
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .show-more-link:hover {
+            background-color: #101111; /* Darker color on hover */
+        }
+
+        /* Enhanced Styling for Headings and Category Sections */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333; /* Dark text color */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue color */
+            text-transform: uppercase; /* Uppercase letters */
+            text-align: center;
+        }
+
+        .category-section {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <!-- Logo and Brand -->
-            <a class="navbar-brand" href="#">
-                <img src="{% static 'images/default.png' %}" alt="Logo"> <!-- Adjust path to your logo image -->
-                MarketHub
-            </a>
-            <!-- Navbar Toggler for Mobile -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar Items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <h1 class="mt-5 mb-4">MarketHub Generall Collections</h1>
-        {% for category_product in category_products %}
+        <!-- Logo and Brand -->
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/default.png' %}" alt="Logo"> <!-- Adjust path to your logo image -->
+            MarketHub
+        </a>
+        <!-- Navbar Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h1>MarketHub General Collections</h1>
+    {% for category_product in category_products %}
+        <div class="category-section">
             <h2>{{ category_product.category.name }}</h2>
             <div class="row product-container">
                 {% for product in category_product.products %}
                     <div class="col-md-6">
                         <div class="product-card">
                             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-                            <h3 class="product-name">{{ product.name }}</h3>                    
+                            <h3 class="product-name">{{ product.name }}</h3>
                             <p class="product-price">Price: ${{ product.price }}</p>
                             <p class="product-stock">Stock: {{ product.stock }}</p>
                             <!-- Quantity input field -->
@@ -69,23 +156,26 @@
                     </div>
                 {% endfor %}
             </div>
-            <a href="{% url 'product_list_by_category' category_product.category.id %}" class="show-more-link">Show More</a>
-        {% endfor %}
-    </div>
+            <div class="text-center">
+                <a href="{% url 'product_list_by_category' category_product.category.id %}" class="show-more-link">Show More</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Update subtotal when quantity changes
-            $('.quantity-input').change(function() {
-                var productId = $(this).data('product-id');
-                var quantity = $(this).val();
-                var productPrice = parseFloat($(this).closest('.product-card').find('.product-price').text().replace('$', ''));
-                var subtotal = quantity * productPrice;
-                $(this).closest('.product-card').find('.subtotal-value').text(subtotal.toFixed(2));
-            });
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Update subtotal when quantity changes
+        $('.quantity-input').change(function() {
+            var productId = $(this).data('product-id');
+            var quantity = $(this).val();
+            var productPrice = parseFloat($(this).closest('.product-card').find('.product-price').text().replace('$', ''));
+            var subtotal = quantity * productPrice;
+            $(this).closest('.product-card').find('.subtotal-value').text(subtotal.toFixed(2));
         });
-    </script>
+    });
+</script>
 </body>
 </html>
