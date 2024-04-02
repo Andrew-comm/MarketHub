@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Processing</title>
+</head>
+<body>
+    <h1>Payment Processing</h1>
+    <p>Thank you for your purchase!</p>
+   
+    <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+        {% csrf_token %}
+        {{ form.render }}
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online">
+    </form>
+</body>
+</html>

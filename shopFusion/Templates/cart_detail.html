@@ -6,32 +6,79 @@
     <title>Cart Detail</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Cart table styles */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cart-table th, .cart-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .cart-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .cart-table td {
+            vertical-align: middle;
+        }
+        /* Checkout button styles */
+        .checkout-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .checkout-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5 mb-4">Your Cart</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for product in cart_products %}
+        <h1 class="mt-5 mb-4 text-center">{{ user.username }} Cart</h1>
+        <div class="table-responsive">
+            <table class="table cart-table">
+                <thead>
                     <tr>
-                        <td>{{ product.name }}</td>
-                        <td>${{ product.price }}</td>
-                        <td>{{ product.cart_quantity }}</td>
-                        <td>${{ product.subtotal }}</td>  <!-- Display subtotal -->
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for product in cart_products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>${{ product.price }}</td>
+                            <td>{{ product.cart_quantity }}</td>
+                            <td>${{ product.subtotal }}</td> <!-- Use the 'subtotal' attribute -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         <div class="mt-3">
             <h3>Total Price: ${{ total_price }}</h3>
+        </div>
+        <div>
+            <a href="{% url 'checkout' %}" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
         </div>
     </div>
 </body>

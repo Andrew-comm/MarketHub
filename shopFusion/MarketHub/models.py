@@ -1,6 +1,8 @@
 from django.db import models
 
 
+
+
 class Category(models.Model):
     """
     Model for product categories and subcategories.
@@ -50,5 +52,6 @@ class Product(models.Model):
         String representation of the product with name, price, and category.
         """
         return f"{self.name} - ${self.price} ({self.category.name if self.category else 'No category'})"
+
 
 
