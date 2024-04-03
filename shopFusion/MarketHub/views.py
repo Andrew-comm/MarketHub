@@ -246,6 +246,7 @@ def send_email(email, subject, message):
     except Exception as e:
         print(f"Error sending email: {e}")
         return False  # Email sending failed
+
 @csrf_exempt
 def payment_process(request):
     # Fetch products with non-zero cart quantity for the logged-in user
@@ -257,7 +258,8 @@ def payment_process(request):
     total_price = sum(product.price * product.cart_quantity for product in cart_products)
     
     print("Total price:", total_price)
-    
+
+
     host = request.get_host()
 
     paypal_dict = {

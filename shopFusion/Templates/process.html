@@ -4,15 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Processing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .payment-container {
+            max-width: 500px;
+            margin: 100px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .paypal-button {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <h1>Payment Processing</h1>
-    <p>Thank you for your purchase!</p>
-   
-    <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
-        {% csrf_token %}
-        {{ form.render }}
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online">
-    </form>
+    <div class="container">
+        <div class="payment-container">
+            <h1>Payment Processing</h1>
+            <p>Thank you for your purchase!</p>
+            <form method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+                {% csrf_token %}
+                {{ form.render }}
+            
+            </form>
+        </div>
+    </div>
 </body>
 </html>
