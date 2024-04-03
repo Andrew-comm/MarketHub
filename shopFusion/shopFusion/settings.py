@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-@#!g3n$s=#7cqh4l%2*1!i$@@b_0r(k=*k=v20(!3j6^cg(guf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['markethub-347n.onrender.com', '127.0.0.1', 'localhost']
 
 
 
