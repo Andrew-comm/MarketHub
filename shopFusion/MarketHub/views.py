@@ -14,10 +14,7 @@ from django.db.models import Sum, F
 from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
-from paypal.standard.forms import PayPalPaymentsForm
-
-
-
+from paypal.standard.forms import PayPalPaymentsForm # type: ignore
 from django.core.mail import send_mail
 from django.urls import reverse
 import uuid
